@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- use xlsx.mini.min.js from version 0.20.1 -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.mini.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+
+    <title>Result Maker</title>
+</head>
+<body>
+    <form>
+        <label for="roll">Roll</label>
+        <input type="text" name="roll" id="roll">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <label for="marks">Marks</label>
+        <input type="text" name="marks" id="marks">
+
+        <button type="button" id="addBtn">Add</button>
+        <button type="button" id="buildBtn">Build</button>
+    </form>
+</body>
+<script src="index.js"></script>
+</html>
