@@ -34,7 +34,7 @@ document.getElementById("addBtn").addEventListener("click",(e)=>{
 
 document.getElementById("buildBtn").addEventListener("click",(e)=>{
     e.preventDefault();
-    ws_data.sort((a,b)=> parseInt(a[2]) > parseInt(b[2]));
+    ws_data.sort((a,b)=> parseInt(a[2]) - parseInt(b[2]));
     ws_data.unshift(["Roll","Name","Marks"])
     var ws = XLSX.utils.aoa_to_sheet(ws_data);
     wb.Sheets["Result Sheet"] = ws;
