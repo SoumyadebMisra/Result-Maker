@@ -8,7 +8,7 @@ wb.Props = {
 };
 
 wb.SheetNames.push("Result Sheet");
-ws_data = [["Roll","Name","Marks"]];
+ws_data = [];
 
 function s2ab(s) { 
     var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
@@ -34,12 +34,14 @@ document.getElementById("addBtn").addEventListener("click",(e)=>{
 
 document.getElementById("buildBtn").addEventListener("click",(e)=>{
     e.preventDefault();
+    ws_data.sort((a,b)=> a[2] > b[2]);
+    ws_data.unshift(["Roll","Name","Marks"])
     var ws = XLSX.utils.aoa_to_sheet(ws_data);
     wb.Sheets["Result Sheet"] = ws;
 
     var wbout = XLSX.write(wb, {bookType:'xlsx',  type: 'binary'});
     saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'test.xlsx');
     console.log(ws_data,ws)
-    ws_data = [["Roll","Name","Marks"]];
+    ws_data = [];
 })
 
